@@ -35,6 +35,10 @@ export OPENAI_API_KEY=sk-...
 
 > The module uses `openai>=1.0.0` and the Chat Completions API (e.g., `gpt-4o`, `gpt-4o-mini`).
 
+### Ollama support
+
+Ollama models can be supported through [Ollama's OpenAI compatible Chat Completions API](https://ollama.com/blog/openai-compatibility) by setting `OPENAI_API_KEY=ollama`. If the Ollama host is anywhere other than `http://localhost:11434` then that can also be using the environment variable `OLLAMA_HOST` as `OLLAMA_HOST=http://some-host:some-port`. Change the model to a valid and available model on your Ollama server.
+
 ---
 
 ## Core Mathematical Framework

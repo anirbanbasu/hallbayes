@@ -38,6 +38,7 @@ import re
 import time
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Optional, Sequence, Tuple
+from urllib.parse import urljoin
 
 # ------------------------------------------------------------------------------------
 # OpenAI Backend
@@ -62,7 +63,22 @@ class OpenAIBackend:
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY", "")
         if not self.api_key:
             raise RuntimeError("OPENAI_API_KEY not set.")
-        self.client = OpenAI(api_key=self.api_key)
+        if len(self.api_key) > 0 and self.api_key.startswith("sk-"):
+            # Likely an OpenAI key
+            self.client = OpenAI(api_key=self.api_key)
+        elif self.api_key.lower() == "ollama":
+            # Ollama server through Open AI-compatible API
+            self.client = OpenAI(
+                api_key=self.api_key,
+                base_url=urljoin(
+                    os.environ.get(
+                        "OLLAMA_HOST",
+                        "http://localhost:11434"),
+                    "/v1"
+                )
+            )
+        else:
+            raise ValueError(f"Unsupported OPENAI_API_KEY: {self.api_key}")
         self.request_timeout = float(request_timeout)
 
     def chat_create(self, messages: List[Dict], **kwargs):
