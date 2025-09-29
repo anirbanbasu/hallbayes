@@ -39,6 +39,11 @@ export OPENAI_API_KEY=sk-...
 
 Ollama models can be supported through [Ollama's OpenAI compatible Chat Completions API](https://ollama.com/blog/openai-compatibility) by setting `OPENAI_API_KEY=ollama`. If the Ollama host is anywhere other than `http://localhost:11434` then that can also be using the environment variable `OLLAMA_HOST` as `OLLAMA_HOST=http://some-host:some-port`. Change the model to a valid and available model on your Ollama server.
 
+Note the following regarding Ollama models.
+
+- Before invoking the script `hallrisk-example`, you must modify the model name in `app/examples/example.py:main` to correctly load a valid and available Ollama model.
+- Likewise, if you want to run the batch examples, you must change the model in `app/examples/batch_example.py:main`.
+
 ---
 
 ## Core Mathematical Framework
