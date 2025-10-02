@@ -539,12 +539,15 @@ def _parse_decision(text: str) -> str:
 def _choices_to_decisions(choices) -> List[str]:
     outs = []
     for ch in choices:
-        content = ""
-        try: content = ch.message.content or ""
-        except Exception: content = getattr(ch, "text", "") or ""
+        if isinstance(ch, str):
+            content = ch
+        else:
+            try:
+                content = ch.message.content or ""
+            except Exception:
+                content = getattr(ch, "text", "") or getattr(ch, "content", "") or str(ch)
         outs.append(_parse_decision(content))
     return outs
-
 
 def estimate_event_signals_sampling(
     backend: OpenAIBackend,
