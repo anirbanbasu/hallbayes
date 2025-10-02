@@ -1,3 +1,44 @@
+Metadata-Version: 2.4
+Name: hallbayes
+Version: 0.1.0
+Summary: EDFL/B2T/ISR hallucination risk calculator for LLMs
+Home-page: https://github.com/leochlon/hallbayes
+Author: Leo
+License: MIT
+Project-URL: Homepage, https://github.com/leochlon/hallbayes
+Keywords: LLM,hallucination,risk,EDFL,OpenAI,Anthropic,HuggingFace,Ollama,OpenRouter
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: numpy
+Requires-Dist: requests
+Provides-Extra: anthropic
+Requires-Dist: anthropic>=0.28.0; extra == "anthropic"
+Provides-Extra: huggingface
+Requires-Dist: transformers; extra == "huggingface"
+Requires-Dist: torch; extra == "huggingface"
+Provides-Extra: ollama
+Requires-Dist: ollama; extra == "ollama"
+Provides-Extra: openrouter
+Requires-Dist: requests; extra == "openrouter"
+Provides-Extra: all
+Requires-Dist: anthropic>=0.28.0; extra == "all"
+Requires-Dist: transformers; extra == "all"
+Requires-Dist: torch; extra == "all"
+Requires-Dist: ollama; extra == "all"
+Requires-Dist: requests; extra == "all"
+Provides-Extra: web
+Requires-Dist: streamlit>=1.28.0; extra == "web"
+Provides-Extra: dev
+Requires-Dist: pyinstaller>=6.0.0; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: ruff>=0.4.0; extra == "dev"
+Requires-Dist: mypy>=1.4.0; extra == "dev"
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
 # Hallucination Risk Calculator & Prompt Re-engineering Toolkit (Multi-Provider Support)
 
 **Post-hoc calibration without retraining** for large language models. This toolkit turns a raw prompt into:  

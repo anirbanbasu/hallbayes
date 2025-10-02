@@ -42,7 +42,4 @@ hallbayes-example = "app.examples.example:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["hallbayes*", "app*", "scripts*"]
-
-[tool.setuptools.package-dir]
-hallbayes = "scripts"
+include = ["hallbayes*", "app*"]

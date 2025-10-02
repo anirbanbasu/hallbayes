@@ -31,10 +31,9 @@ pip install torch torch-geometric pandas numpy rapidfuzz lxml openai transformer
 
 ### 3. Required Files
 
-Place these scripts in the same directory:
+Place these files in the same directory and ensure the `hallbayes` package is installed (e.g. `pip install ..` from the repo root):
 - `drkg_hallbayes.py` - Main script
 - `drkg_link_and_collect.py` - DRKG processing with PyTorch Geometric
-- `hallucination_toolkit.py` - ISR-based safety assessment
 
 ### 4. DrugBank Vocabulary (Optional but Recommended)
 

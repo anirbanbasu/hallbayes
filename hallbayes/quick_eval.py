@@ -6,9 +6,9 @@ Quick Evaluation Tool for HallBayes
 A simple command-line tool for quick hallucination risk evaluation.
 
 Usage:
-    python scripts/quick_eval.py "Your prompt here"
-    python scripts/quick_eval.py --file prompts.txt
-    python scripts/quick_eval.py --interactive
+    python -m hallbayes.quick_eval "Your prompt here"
+    python -m hallbayes.quick_eval --file prompts.txt
+    python -m hallbayes.quick_eval --interactive
 """
 
 import argparse
@@ -19,13 +19,13 @@ from typing import List
 # Add the parent directory to Python path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from scripts.hallucination_toolkit import (
+from hallbayes.hallucination_toolkit import (
     OpenAIBackend,
     OpenAIItem,
     OpenAIPlanner,
     generate_answer_if_allowed,
 )
-from scripts.utils import (
+from hallbayes.utils import (
     validate_openai_setup,
     load_prompts_from_file,
     create_batch_from_prompts,
@@ -146,9 +146,9 @@ def main():
     else:
         parser.print_help()
         print("\nExamples:")
-        print("  python scripts/quick_eval.py \"What is 2+2?\"")
-        print("  python scripts/quick_eval.py --file my_prompts.txt")
-        print("  python scripts/quick_eval.py --interactive")
+        print("  python -m hallbayes.quick_eval \"What is 2+2?\"")
+        print("  python -m hallbayes.quick_eval --file my_prompts.txt")
+        print("  python -m hallbayes.quick_eval --interactive")
 
 
 if __name__ == "__main__":

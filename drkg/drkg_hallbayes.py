@@ -37,14 +37,14 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from scripts.hallucination_toolkit import (
+    from hallbayes.hallucination_toolkit import (
         OpenAIBackend,
         OpenAIPlanner,
         OpenAIItem,
         generate_answer_if_allowed
     )
 except ImportError:
-    print("Error: scripts/hallucination_toolkit.py not found (expected in ../scripts)")
+    print("Error: hallbayes package not found (install with `pip install .` from repo root)")
     sys.exit(1)
 
 try:

@@ -15,9 +15,9 @@ $PYTHON_BIN -m pip install -r requirements.txt
 # Build onefile binary
 OUTDIR=bin
 mkdir -p "$OUTDIR"
-pyinstaller --noconfirm --onefile scripts/backend_entry.py \
+pyinstaller --noconfirm --onefile hallbayes/backend_entry.py \
   --add-data app:app \
-  --add-data scripts:scripts
+  --add-data hallbayes:hallbayes
 
 # Move artifact to bin/ (name uniformly for Electron)
 if [[ "$OSTYPE" == msys* || "$OSTYPE" == cygwin* || "$OS" == "Windows_NT" ]]; then

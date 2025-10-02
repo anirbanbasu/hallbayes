@@ -1,0 +1,5 @@
+[console_scripts]
+hallbayes-cli = app.cli.frontend:main
+hallbayes-example = app.examples.example:main
+hallbayes-launch = app.launcher.entry:main
+hallbayes-web = app.web.web_app:main

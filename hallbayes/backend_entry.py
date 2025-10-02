@@ -3,7 +3,7 @@ Offline Backend Entry (PyInstaller-friendly)
 -------------------------------------------
 
 Launches the Streamlit app without relying on pip at runtime.
-Used by scripts/build_offline_backend.(sh|bat) to create a single-file binary.
+Used by hallbayes/build_offline_backend.(sh|bat) to create a single-file binary.
 """
 
 from __future__ import annotations

@@ -11,8 +11,8 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/leochlon/hallbayes",
-    packages=["hallbayes"],
-    package_dir={"hallbayes": "scripts"},
+    packages=find_packages(include=["hallbayes*", "app*"]),
+    package_dir={"": "."},
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",

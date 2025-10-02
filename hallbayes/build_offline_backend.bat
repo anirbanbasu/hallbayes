@@ -10,9 +10,9 @@ echo Using Python: %PY%
 %PY% -m pip install --upgrade pip wheel setuptools pyinstaller || goto :error
 %PY% -m pip install -r requirements.txt || goto :error
 
-pyinstaller --noconfirm --onefile scripts\backend_entry.py ^
+pyinstaller --noconfirm --onefile hallbayes\backend_entry.py ^
   --add-data app;app ^
-  --add-data scripts;scripts || goto :error
+  --add-data hallbayes;hallbayes || goto :error
 
 if exist dist\backend_entry.exe (
   if not exist bin mkdir bin
