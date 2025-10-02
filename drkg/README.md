@@ -32,8 +32,8 @@ pip install torch torch-geometric pandas numpy rapidfuzz lxml openai transformer
 ### 3. Required Files
 
 Place these scripts in the same directory:
-- `drkg_hallucination_assessment.py` - Main script
-- `drkg_pyg_fixed.py` - DRKG processing with PyTorch Geometric
+- `drkg_hallbayes.py` - Main script
+- `drkg_link_and_collect.py` - DRKG processing with PyTorch Geometric
 - `hallucination_toolkit.py` - ISR-based safety assessment
 
 ### 4. DrugBank Vocabulary (Optional but Recommended)
@@ -51,7 +51,7 @@ export OPENAI_API_KEY="your-api-key-here"
 After downloading DRKG, run a simple query:
 
 ```bash
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "does ibuprofen treat headaches?" \
   --max-hops 2 \
   --isr-threshold 0.1 \
@@ -85,7 +85,7 @@ Evaluates if the model can safely answer using ISR methodology:
 ## Command Line Options
 
 ```bash
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "medical question"           # Required: Your query
   --max-hops 3                          # Graph traversal depth (default: 3)
   --isr-threshold 0.5                   # ISR threshold for answering (default: 1.0)
@@ -121,36 +121,36 @@ python drkg_hallucination_assessment.py \
 
 ### Simple treatment questions
 ```bash
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "does metformin treat diabetes?" \
   --max-hops 2 --isr-threshold 0.1 --h-star 0.2
 
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "can aspirin prevent heart attacks?" \
   --max-hops 3 --isr-threshold 0.2 --h-star 0.15
 ```
 
 ### Drug mechanism questions
 ```bash
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "how does tamoxifen work against breast cancer?" \
   --max-hops 4 --isr-threshold 0.3 --h-star 0.15
 
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "how does allopurinol reduce uric acid?" \
   --max-hops 3 --isr-threshold 0.3 --h-star 0.15
 ```
 
 ### Drug interaction queries
 ```bash
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "does warfarin interact with aspirin?" \
   --max-hops 2 --isr-threshold 0.3 --h-star 0.1
 ```
 
 ### Side effect queries
 ```bash
-python drkg_hallucination_assessment.py \
+python drkg_hallbayes.py \
   --prompt "can prednisone cause weight gain?" \
   --max-hops 3 --isr-threshold 0.5 --h-star 0.1
 ```
