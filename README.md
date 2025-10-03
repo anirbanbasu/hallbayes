@@ -708,8 +708,3 @@ This project is licensed under the MIT License – see the LICENSE file for deta
 ## Attribution
 
 Developed by Hassana Labs (https://hassana.io).
-
-This implementation follows the framework from:
-- Paper: "Post-hoc Selection for Sparse Screening: Ideas from Adaptive Data Analysis" (arXiv:2509.11208v1)
-- URL: https://arxiv.org/abs/2509.11208v1
-- Related EDFL/ISR/B2T methodology for bounded hallucination risk in LLMs
