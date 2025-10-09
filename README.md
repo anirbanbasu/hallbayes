@@ -701,6 +701,7 @@ planner = OpenAIPlanner(backend, temperature=0.3)
 
 ---
 
+Based on the Paper: Predictable Compression Failures: Why Language Models Actually Hallucinate - https://arxiv.org/abs/2509.11208
 ## License
 
 This project is licensed under the MIT License – see the LICENSE file for details.
